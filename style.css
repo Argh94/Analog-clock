@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cotenar{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+    background-color: rgb(5, 5, 41);
+    overflow: hidden;
+}
+.cotenar img{
+    position: absolute;
+    width: 29rem;
+    /* animation:  img------------------ */
+    animation: animat 130s linear infinite;
+}
+.clock{
+    width: 20rem;
+    height: 20rem;
+    position: relative;
+    border-radius: 50%;
+    text-align: center;
+}
+.clock span{
+    position: absolute;
+    display: inline-block;
+    transform: rotate(calc((var(--number)*30deg)));
+    inset: 0.8rem;
+    color: rgb(255, 255, 255);
+}
+.clock span b{
+    display: inline-block;
+    transform: rotate(calc((var(--number)*-30deg)));
+    font-size: 1.3rem;
+}
+.name_me{
+    position: absolute;
+    margin-bottom: 11rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: rgba(255, 153, 0, 0.774);
+    
+}
+.sercel{
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(228, 134, 11, 0.911);
+    z-index: 4;
+}
+/* --------------secdend */
+.secend{
+    width:0.3rem;
+    height: 13.5rem;
+    position: absolute;
+    z-index: 3;
+}
+.secend::before{
+    content: " ";
+    width:100%;
+    height:7.8rem;
+    position: absolute;
+    background-color: red;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+/* ---------------minut */
+.minut{
+    width:0.3rem;
+    height: 11rem;
+    position: absolute;
+    z-index: 2;
+ 
+}
+.minut::before{
+    content: " ";
+    width:100%;
+    height: 6rem;
+    position: absolute;
+    background-color: rgba(9, 205, 219, 0.822);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+/* -----------------hour */
+.hour{
+    width: 0.3rem ;
+    height:7.7rem;
+    position: absolute;
+    z-index: 1;
+}
+.hour::before{
+    content: " ";
+    width:100%;
+    height: 4.4rem;
+    position: absolute;
+    background-color: rgb(67, 143, 89);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+/* animathon img  */
+@keyframes animat {
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* color secend */
+.color_secend_clas{
+    animation: color_secend 500ms linear 1;
+}
+
+@keyframes color_secend {
+    from{
+      color:white;
+    }
+    to{
+        color:orangered;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .cotenar img{
+       width: 25rem;
+    }
+    .clock span{
+        inset: 1.8rem;
+    }
+    .name_me{
+        margin-bottom: 9rem;
+    }
+    .hour{
+        height:6.7rem;
+    }
+    .hour::before{
+        height: 3.4rem;
+    }
+    .minut{ 
+        height: 10.4rem;
+    }
+    .minut::before{
+        height: 5.7rem;
+      
+    }
+    .secend{
+        height: 11.2rem;
+    }
+    .secend::before{   
+        height:6.5rem;
+    }
+}
